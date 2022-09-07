@@ -64,5 +64,52 @@ public class Main {
 
         Node resultNode2 = binarySearchTree.search(14);
         System.out.println("반복문을 이용한 검색 결과: " + resultNode2.getValue());
+
+        // 이진 탐색 트리 삽입
+        BinarySearchTree binarySearchTree1 = new BinarySearchTree();
+        binarySearchTree1.insert(13);
+        binarySearchTree1.insert(9);
+        binarySearchTree1.insert(17);
+        binarySearchTree1.insert(7);
+        binarySearchTree1.insert(11);
+        binarySearchTree1.insert(14);
+        binarySearchTree1.insert(14);
+
+        binarySearchTree1.bfs(binarySearchTree1.getRoot());
+        System.out.println();
+
+        /**
+         *                    56
+         *          10                  94
+         *      8       17          77      101
+         *   3    9   12    49   65    81  99
+         */
+        BinarySearchTree binarySearchTree2 = new BinarySearchTree();
+        int arr1[] = new int[]{56, 10, 94, 8, 17, 77, 101, 3, 9, 12, 49, 65, 81, 99};
+
+        for (int v : arr1) {
+            binarySearchTree2.insert(v);
+        }
+        binarySearchTree2.bfs(binarySearchTree2.getRoot());
+        System.out.println("\n");
+
+        // 삭제
+        // 1. 자식 노드가 없는 경우
+        System.out.println("자식 노드가 없는 노드 3을 지운 결과");
+        binarySearchTree2.delete(binarySearchTree2.getRoot(), 3);
+        binarySearchTree2.bfs(binarySearchTree2.getRoot());
+        System.out.println("\n");
+
+        // 2. 자식 노드가 1개인 경우
+        System.out.println("자식 노드가 1개인 노드 101을 지운 결과");
+        binarySearchTree2.delete(binarySearchTree2.getRoot(), 101);
+        binarySearchTree2.bfs(binarySearchTree2.getRoot());
+        System.out.println("\n");
+
+        // 3. 자식 노드가 2개인 경우
+        System.out.println("자식 노드가 2개인 노드 94를 지운 결과");
+        binarySearchTree2.delete(binarySearchTree2.getRoot(), 94);
+        binarySearchTree2.bfs(binarySearchTree2.getRoot());
+        System.out.println("\n");
     }
 }
