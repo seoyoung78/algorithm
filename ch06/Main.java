@@ -111,5 +111,12 @@ public class Main {
         binarySearchTree2.delete(binarySearchTree2.getRoot(), 94);
         binarySearchTree2.bfs(binarySearchTree2.getRoot());
         System.out.println("\n");
+
+        // 기핑 우선 탐색 - 전위 순회
+        new Traversal().preorder(binarySearchTree2.getRoot());
+        // 중위 순회
+        new Traversal().inorder(binarySearchTree2.getRoot());
+        // 후위 순회
+        new Traversal().postorder(binarySearchTree2.getRoot());
     }
 }
